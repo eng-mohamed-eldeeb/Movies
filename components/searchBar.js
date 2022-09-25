@@ -2,8 +2,8 @@ import React from "react";
 
 const SearchBar = () => {
   return (
-    <div className="pt-28 lg:pt-14 lg:pl-28 lg:pr-1 2xl: 2xl:flex 2xl:justify-center 2xl:items-center">
-      <form className="container px-7">
+    <div className="pt-28 lg:pt-14 lg:pl-28 lg:pr-1 2xl:flex 2xl:justify-center 2xl:items-center">
+      <form className="container px-0 m-auto">
         <label
           for="default-search"
           class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-gray-300"
@@ -31,7 +31,7 @@ const SearchBar = () => {
           <input
             type="search"
             id="default-search"
-            class="block p-4 pl-10 w-full text-xl outline-0 focus:border-sky-600 text-gray-900 bg-gray-50 rounded-lg focus:border-b-2  dark:bg-slate-900 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white "
+            class="block p-4 pl-10 w-full lg:text-xl outline-0 focus:border-sky-600 text-gray-900 bg-gray-50 rounded-lg focus:border-b-2  dark:bg-slate-900 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white "
             placeholder="Search for Movies, TV series"
             required
           />
