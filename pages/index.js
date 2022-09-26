@@ -7,6 +7,7 @@ export default function Home(props) {
   const upcoming = props.upcoming.results
   const topRated = props.topRated.results
   const tvpopular = props.tvpopular.results
+  const topRatedTv = props.topRatedTv.results
   // console.log(data)
   const trendingMovies = data.filter(m => m.media_type === 'movie');
   const trendingTv = data.filter(m => m.media_type === "tv");
@@ -19,7 +20,8 @@ export default function Home(props) {
       <NoneTrending data={upcoming} head="Upcoming" type="MOVIES"/>
       <NoneTrending data={topRated} head="Top Rated" type="MOVIES"/>
       <Trending movies={trendingTv} head="Trending" type="TV SERIES" />
-      <NoneTrending data={tvpopular} head="Top Rated" type="TV SERIES"/>
+      <NoneTrending data={tvpopular} head="Popular" type="TV SERIES"/>
+      <NoneTrending data={topRatedTv} head="Top Rated" type="TV SERIES"/>
     </>
   );
 }
@@ -40,22 +42,29 @@ export async function getServerSideProps() {
   
   res = await fetch(
     `https://api.themoviedb.org/3/movie/upcoming?api_key=33cc0aef002c1a8fa4097c4a7ffe04f7&language=en-US&page=1`
-  );
-
-  const upcoming = await res.json();
-
-  res = await fetch(
-    `https://api.themoviedb.org/3/movie/top_rated?api_key=33cc0aef002c1a8fa4097c4a7ffe04f7&language=en-US&page=1`
-  );
-
-  const topRated = await res.json();
-
-  res = await fetch(
+    );
+    
+    const upcoming = await res.json();
+    
+    res = await fetch(
+      `https://api.themoviedb.org/3/movie/top_rated?api_key=33cc0aef002c1a8fa4097c4a7ffe04f7&language=en-US&page=1`
+      );
+      
+      const topRated = await res.json();
+      
+      res = await fetch(
     `https://api.themoviedb.org/3/tv/popular?api_key=33cc0aef002c1a8fa4097c4a7ffe04f7&language=en-US&page=1`
-  );
+    );
+    
+    const tvpopular = await res.json();
+    
+    // Pass data to the page via props
+ 
 
-  const tvpopular = await res.json();
-
-  // Pass data to the page via props
-  return { props: { trendingMovies, popularMovies, upcoming ,topRated, tvpopular } };
+    res = await fetch(
+      `https://api.themoviedb.org/3/tv/top_rated?api_key=33cc0aef002c1a8fa4097c4a7ffe04f7&language=en-US&page=1`
+    );
+  
+    const topRatedTv = await res.json();
+    return { props: { trendingMovies, popularMovies, upcoming ,topRated, tvpopular, topRatedTv } };
 }
