@@ -4,7 +4,7 @@ import { TbMovie } from "react-icons/tb";
 import { GiPocketRadio } from "react-icons/gi";
 import { useRouter } from "next/router";
 
-const SideBar = () => {
+const NavBar = () => {
   const router = useRouter().pathname;
   return (
     <div className="z-30 fixed flex lg:flex-col w-screen sm:w-11/12 lg:w-auto justify-between py-4 px-4 lg:py-8 lg:px-4 items-center lg:h-5/6 bg-slate-800 sm:left-8 sm:top-4 sm:rounded-xl">
@@ -35,4 +35,4 @@ const SideBar = () => {
   );
 };
 
-export default SideBar;
+export default NavBar;
