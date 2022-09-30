@@ -8,17 +8,17 @@ export default function Home(props) {
   const topRated = props.topRated.results
   const tvpopular = props.tvpopular.results
   const topRatedTv = props.topRatedTv.results
-  // console.log(data)
+
   const trendingMovies = data.filter(m => m.media_type === 'movie');
   const trendingTv = data.filter(m => m.media_type === "tv");
   console.log(trendingTv)
 
   return (
     <>
-      <Trending movies={trendingMovies} head="Trending" type="MOVIES" />
-      <NoneTrending data={popularMovies} head="Now Playing" type="MOVIES"/>
-      <NoneTrending data={upcoming} head="Upcoming" type="MOVIES"/>
-      <NoneTrending data={topRated} head="Top Rated" type="MOVIES"/>
+      <Trending movies={trendingMovies} head="Trending" type="MOVIE" />
+      <NoneTrending data={popularMovies} head="Now Playing" type="MOVIE"/>
+      <NoneTrending data={upcoming} head="Upcoming" type="MOVIE"/>
+      <NoneTrending data={topRated} head="Top Rated" type="MOVIE"/>
       <Trending movies={trendingTv} head="Trending" type="TV SERIES" />
       <NoneTrending data={tvpopular} head="Popular" type="TV SERIES"/>
       <NoneTrending data={topRatedTv} head="Top Rated" type="TV SERIES"/>
