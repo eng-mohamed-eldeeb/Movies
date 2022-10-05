@@ -44,8 +44,9 @@ const Index = (props) => {
 
 export async function getServerSideProps(context) {
   const list_id = context.params.list_id;
+  console.log(list_id)
   let res = await fetch(
-    `https://api.themoviedb.org/3/discover/tv?api_key=33cc0aef002c1a8fa4097c4a7ffe04f7&language=en-US&with_geners=${list_id}&page=1`
+    `https://api.themoviedb.org/3/discover/tv?api_key=33cc0aef002c1a8fa4097c4a7ffe04f7&with_genres=${list_id}`
   );
   const data = await res.json();
 
