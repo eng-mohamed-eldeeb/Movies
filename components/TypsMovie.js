@@ -26,6 +26,7 @@ const Typs = (props) => {
             return (
               <Link href={`${router.pathname}/list/${type.id}`}>
                 <motion.li
+                key={type.id}
                   className={classes}
                   whileHover={{ skew: -3 }}
                   onHoverStart={(e) => {}}
