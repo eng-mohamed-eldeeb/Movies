@@ -23,7 +23,7 @@ const Index = (props) => {
                 <div>
                   <Img src={`https://image.tmdb.org/t/p/w500${movie.backdrop_path}`} className={"rounded-lg"}/>
                 </div>
-                <div className="absolute bottom-2 left-3 bg-white p-3 rounded-lg bg-opacity-90 z-10 flex gap-3 mt-2 content-center justify-items-end">
+                <div className="sm:absolute bottom-2 left-3 bg-white p-3 rounded-lg bg-opacity-90 z-10 flex gap-3 mt-2 content-center justify-items-end">
                   <h4 className="flex text-sm gap-2">
                     <GiPocketRadio size={25} />
                   </h4>
