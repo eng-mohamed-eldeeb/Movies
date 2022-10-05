@@ -74,7 +74,7 @@ const Typs = (props) => {
             classes = "px-5 py-14 bg-slate-800 rounded-2xl";
           }
           return (
-            <Link href={`${router.pathname}/list/${type.id}`}>
+            <Link key={type.id} href={`${router.pathname}/list/${type.id}`}>
               <motion.li
                 key={type.id}
                 className={classes}
