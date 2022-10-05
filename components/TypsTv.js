@@ -37,7 +37,8 @@ const Typs = (props) => {
               return (
                 <Link key={type.id} href={`${router.pathname}/list/${type.id}`}>
                   <motion.li
-                    className={` py-14 ${
+                    key={type.id}
+                    className={`py-14 ${
                       index % 2 === 0
                         ? `rounded-2xl bg-purple-800 cursor-pointer`
                         : "bg-slate-800 rounded-2xl"
@@ -57,6 +58,7 @@ const Typs = (props) => {
               return (
                 <Link key={type.id} href={`${router.pathname}/list/${type.id}`}>
                   <motion.li
+                    key={type.id}
                     className={` py-14 w-full ${
                       index % 2 === 0
                         ? `rounded-2xl bg-purple-800 cursor-pointer`

@@ -59,7 +59,7 @@ const Index = (props) => {
           <h2 className="text-white text-md font-semibold">Genres</h2>
           <ul className="flex gap-4 pt-3">
             {data.genres.map((g) => (
-              <li className="border-2 p-1 rounded-md text-xs text-white ">
+              <li key={g.id} className="border-2 p-1 rounded-md text-xs text-white ">
                 {g.name}
               </li>
             ))}
@@ -73,7 +73,7 @@ const Index = (props) => {
           <h2 className="text-white text-md font-semibold">casts</h2>
           <ul className="text-white text-xs font-semibold flex flex-wrap gap-3">
             {casts.map((cast) => (
-              <li className="border-2 p-1 rounded-lg">{cast.name}</li>
+              <li key={cast.name} className="border-2 p-1 rounded-lg">{cast.name}</li>
             ))}
           </ul>
         </div>
