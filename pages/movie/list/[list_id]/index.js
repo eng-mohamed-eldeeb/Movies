@@ -23,7 +23,7 @@ const Index = (props) => {
                     src={`https://image.tmdb.org/t/p/w500${movie.backdrop_path}`}
                   />
                 </div>
-                <div className="absolute bottom-3 left-3 bg-white p-3 rounded-lg bg-opacity-90 z-10 flex gap-3 mt-2 content-center justify-items-end">
+                <div className="absolute sm:bottom-3 sm:left-3 bottom-0 left-0 h-10 sm:h-auto overflow-auto  bg-white p-3 rounded-lg bg-opacity-50 sm:bg-opacity-90 z-10 flex gap-3 mt-2 content-center justify-items-end">
                   <TbMovie size={25} />
                   <h4 className="">{movie.title}</h4>
                 </div>
