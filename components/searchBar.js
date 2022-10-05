@@ -3,16 +3,16 @@ import { useRouter } from "next/router";
 
 const SearchBar = () => {
   const router = useRouter();
-  const [searsh, set_searsh] = useState("");
+  const [search, set_search] = useState("");
   const handle_input = (event) => {
-    set_searsh(event.target.value);
+    set_search(event.target.value);
   };
   return (
     <div className="pt-20 lg:pt-14 lg:pl-28 lg:pr-1 2xl:flex 2xl:justify-center 2xl:items-center">
       <form
         onSubmit={(e) => {
           e.preventDefault();
-          router.push(`/searsh/${searsh}`);
+          router.push(`/search/${search}`);
         }}
         className="container px-0 m-auto"
       >
