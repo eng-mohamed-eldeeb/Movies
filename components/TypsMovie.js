@@ -26,7 +26,7 @@ const Typs = (props) => {
             return (
               <Link key={type.id} href={`${router.pathname}/list/${type.id}`}>
                 <motion.li
-                key={type.id}
+                  key={type.id}
                   className={classes}
                   whileHover={{ skew: -3 }}
                   onHoverStart={(e) => {}}
@@ -48,7 +48,7 @@ const Typs = (props) => {
             }
             return (
               <motion.li
-              key={cat.id}
+                key={cat.name}
                 className={classes}
                 whileHover={{ skew: -3 }}
                 onHoverStart={(e) => {}}
@@ -74,8 +74,9 @@ const Typs = (props) => {
             classes = "px-5 py-14 bg-slate-800 rounded-2xl";
           }
           return (
-            <Link key={type.id} href={`${router.pathname}/list/${type.id}`}>
+            <Link href={`${router.pathname}/list/${type.id}`}>
               <motion.li
+                key={type.id}
                 className={classes}
                 whileHover={{ skew: -3 }}
                 onHoverStart={(e) => {}}
@@ -87,6 +88,7 @@ const Typs = (props) => {
           );
         })}
         <motion.li
+          key={last.id}
           className={`px-5 py-14  rounded-2xl bg-indigo-800 cursor-pointer lg:col-span-6`}
           whileHover={{ skew: -3 }}
           onHoverStart={(e) => {}}
