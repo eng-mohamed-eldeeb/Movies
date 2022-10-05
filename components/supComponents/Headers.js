@@ -1,4 +1,3 @@
-import { TbMovie } from 'react-icons/tb';
 const Headers = (props) => {
   return (
     <div className="flex py-3 gap-5 text-white">

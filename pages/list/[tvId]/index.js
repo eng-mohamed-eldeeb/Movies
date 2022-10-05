@@ -1,8 +1,8 @@
 import React from "react";
-import ImgConatiner from '../../../../components/Details/ImgConatiner';
+import ImgConatiner from "../../../../components/Details/ImgConatiner";
 const Index = (props) => {
   const data = props.data;
-  console.log(data)
+  console.log(data);
   const casts = props.movieCasts.cast;
   return (
     <div className="flex flex-col lg:grid lg:grid-cols-2 lg:items-start lg:px-36 p-5 lg:gap-20 gap-4  items-center">
@@ -91,20 +91,7 @@ const Index = (props) => {
   );
 };
 
-export async function getStaticPaths() {
-  return {
-    fallback: true,
-    paths: [
-      {
-        params: {
-          tvId: "301502",
-        },
-      },
-    ],
-  };
-}
-
-export async function getStaticProps(context) {
+export async function getServerSideProps(context) {
   const tvId = context.params.tvId;
   let res = await fetch(
     `https://api.themoviedb.org/3/tv/${tvId}?api_key=33cc0aef002c1a8fa4097c4a7ffe04f7&language=en-US`

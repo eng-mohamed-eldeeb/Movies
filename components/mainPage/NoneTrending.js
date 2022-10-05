@@ -6,12 +6,12 @@ import Link from 'next/link';
 const NoneTrending = (props) => {
   const popularMovies = props.data.slice(0, 6);
   return (
-    <main className="container px-2 pt-5 m-auto lg:pl-14 xl:px-20">
+    <main className="lg:ml-16 px-2 pt-5 m-auto lg:pl-14 xl:px-20">
       <Headers title={props.head} type={props.type} />
       <ul className="scrollbar-thin scrollbar-thumb-rounded-full scrollbar-track-rounded scrollbar-thumb-gray-500 pt-2 w-full content-evenly px-2  grid grid-cols-2 sm:grid-cols-3 gap-4 overflow-y-auto text-white">
         {popularMovies.map((movie) => (
           <motion.li
-            whileHover={{ scale: 0.95 }}
+            whileHover={{ skew: -2 }}
             onHoverStart={(e) => {}}
             onHoverEnd={(e) => {}}
             key={movie.id}

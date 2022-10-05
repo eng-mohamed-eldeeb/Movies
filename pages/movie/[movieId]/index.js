@@ -3,7 +3,7 @@ import ImgConatiner from "../../../components/Details/ImgConatiner";
 const Index = (props) => {
   const data = props.data;
   const casts = props.movieCasts.cast;
-  console.log(data)
+  console.log(data);
   return (
     <div className="flex flex-col lg:grid lg:grid-cols-2 lg:items-start lg:px-36 p-5 lg:gap-20 gap-4  items-center">
       <div className="w-full lg:flex lg:justify-end">
@@ -30,12 +30,12 @@ const Index = (props) => {
               {data.runtime} min.
             </h4>
           </div>
-          <div className="text-center">
+          <div className="text-cent er">
             <h3 className="text-sm text-white text-opacity-50 font-semibold">
               language
             </h3>
             <h4 className="text-md  text-white font-semibold">
-              {data.spoken_languages[0].english_name}
+              {data.spoken_languages[0]?.english_name}
             </h4>
           </div>
           <div className="text-center">
@@ -91,20 +91,7 @@ const Index = (props) => {
   );
 };
 
-export async function getStaticPaths() {
-  return {
-    fallback: true,
-    paths: [
-      {
-        params: {
-          movieId: "301502",
-        },
-      },
-    ],
-  };
-}
-
-export async function getStaticProps(context) {
+export async function getServerSideProps(context) {
   const movieId = context.params.movieId;
   let res = await fetch(
     `https://api.themoviedb.org/3/movie/${movieId}?api_key=33cc0aef002c1a8fa4097c4a7ffe04f7&language=en-US`

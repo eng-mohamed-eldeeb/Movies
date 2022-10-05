@@ -2,8 +2,8 @@ import React from "react";
 import ImgConatiner from "../../../components/Details/ImgConatiner";
 const Index = (props) => {
   const data = props.data;
-  const casts = props.movieCasts.cast
-  console.log(casts)
+  const casts = props.movieCasts.cast;
+  console.log(casts);
   return (
     <div className="flex flex-col lg:grid lg:grid-cols-2 lg:items-start lg:px-36 p-5 lg:gap-20 gap-4  items-center">
       <div className="w-full lg:flex lg:justify-end">
@@ -91,20 +91,7 @@ const Index = (props) => {
   );
 };
 
-export async function getStaticPaths() {
-  return {
-    fallback: true,
-    paths: [
-      {
-        params: {
-          movieId: "301502",
-        },
-      },
-    ],
-  };
-}
-
-export async function getStaticProps(context) {
+export async function getServerSideProps(context) {
   const movieId = context.params.movieId;
   // console.log(movieId)
   let res = await fetch(
