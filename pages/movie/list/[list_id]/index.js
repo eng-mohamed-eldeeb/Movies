@@ -4,7 +4,6 @@ import { TbMovie } from "react-icons/tb";
 import Link from "next/link";
 const Index = (props) => {
   const data = props.data.results;
-  console.log(data[0]);
   return (
     <main className="px-3 lg:px-32">
       <ul className="grid 2xl:grid-cols-4 lg:grid-cols-3 grid-cols-2 gap-10">
@@ -37,20 +36,7 @@ const Index = (props) => {
   );
 };
 
-export async function getStaticPaths() {
-  return {
-    fallback: true,
-    paths: [
-      {
-        params: {
-          list_id: "301502",
-        },
-      },
-    ],
-  };
-}
-
-export async function getStaticProps(context) {
+export async function getServerSideProps(context) {
   const list_id = context.params.list_id;
   let res = await fetch(
     `https://api.themoviedb.org/3/discover/movie?api_key=33cc0aef002c1a8fa4097c4a7ffe04f7&language=en-US&with_geners=${list_id}&page=1`

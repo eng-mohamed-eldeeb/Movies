@@ -5,7 +5,6 @@ import Link from "next/link";
 import Img from "../../../../components/Img";
 const Index = (props) => {
   const data = props.data.results;
-  console.log(data[0]);
   return (
     <main className=" lg:px-32">
       <ul className="grid 2xl:grid-cols-4 lg:grid-cols-3 grid-cols-2 gap-10">
